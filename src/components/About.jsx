@@ -1,4 +1,4 @@
-import gambar from '../assets/keren.jpg';
+import gambar from '../assets/gktw.JPG';
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
