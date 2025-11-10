@@ -83,7 +83,7 @@ cards.forEach((card) => {
 
     })
     return(
-       <div className="max-w-6xl mx-auto px-4 md:ml-40 py-20 cursor-default" id='projects'>
+       <div className="max-w-6xl mx-auto px-4 md:ml-40 py-20 cursor-default px-6 md:px-16" id='projects'>
         <p className="text-2xl text-gray-600">Work</p>
         <h1 className="text-5xl font-extrabold bg-gradient-to-l from-secondary to-primary text-transparent bg-clip-text mt-2">Recent Project</h1>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

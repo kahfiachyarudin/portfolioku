@@ -122,7 +122,7 @@ function Experience() {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 mt-10 md:ml-40">
+    <div className="min-h-screen flex items-center justify-center p-4 mt-10 md:ml-40 px-6 md:px-16">
       <div className="w-full max-w-6xl mx-auto rounded-3xl p-10 lg:p-16 shadow-2xl bg-[linear-gradient(90deg,#B86ADF_0%,#F76D71_50%,#FFB347_100%)] flex flex-col md:flex-row text-white section-experience">
         <div className="mb-12 md:w-1/2 text-center md:text-left">
           <p className="mb-2 cursor-default">Experience</p>

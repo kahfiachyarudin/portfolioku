@@ -60,7 +60,7 @@ function Hero(){
 
     return(
         
-        <div className="relative flex items-center justify-center py-10 hero md:ml-40" id='home'>
+        <div className="relative flex items-center justify-center py-10 hero md:ml-40 px-6 md:px-16" id='home'>
             <h1 className="absolute text-[60px] sm:text-[80px] md:text-[120px] lg:text-[160px] font-extrabold text-gray-200 dark:text-gray-700 opacity-30 select-none text-center leading-none">Welcome</h1>
            
             <img 

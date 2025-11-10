@@ -59,7 +59,7 @@ function Form() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen md:ml-40">
+    <div className="flex justify-center items-center min-h-screen md:ml-40 px-6 md:px-16">
       <div
         ref={formContainerRef}
         id="contact"

@@ -40,7 +40,7 @@ function Skill() {
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 md:px-8 py-20 md:ml-40 cursor-default" id="skill">
+    <div className="max-w-6xl mx-auto px-4 md:px-8 py-20 md:ml-40 cursor-default px-6 md:px-16" id="skill">
       <div>
         <p className="text-2xl text-gray-600">My</p>
         <h1 className="text-5xl font-extrabold bg-gradient-to-l from-secondary to-primary text-transparent bg-clip-text mt-2">

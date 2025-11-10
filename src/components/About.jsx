@@ -136,7 +136,7 @@ const aboutAnimation = gsap.from(splitAbout.words, {
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 lg:px-8 py-20 md:ml-40 cursor-default" id="about">
+    <div className="max-w-6xl mx-auto px-4 lg:px-8 py-20 md:ml-40 cursor-default px-6 md:px-16" id="about">
       <p className="text-2xl text-gray-600">Nice to meet you...</p>
       <h1 className="text-5xl font-extrabold bg-gradient-to-l from-secondary to-primary text-transparent bg-clip-text mt-2">
         About Me
