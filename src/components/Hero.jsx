@@ -49,7 +49,7 @@ export default function HeroSection() {
     >
       <h1
         ref={headingRef}
-        className="text-4xl md:text-6xl font-extrabold mb-4"
+        className="text-4xl md:text-6xl font-extrabold mb-4 cursor-default"
       >
         Hi, I’m Kahfi —{" "}
         <span ref={wordRef} className="inline-block">
@@ -60,24 +60,28 @@ export default function HeroSection() {
 
       <p
         ref={subheadingRef}
-        className="text-lg md:text-xl text-white max-w-xl mb-8"
+        className="text-lg md:text-xl text-white max-w-xl mb-8 cursor-default"
       >
         I create smooth, interactive web experiences with React, GSAP, and
         Tailwind CSS.
       </p>
 
       <div ref={buttonRef} className="flex gap-4">
-        <a className="px-6 py-3 bg-[#6A0DAD] hover:bg-[#5A0C96] rounded-full font-semibold text-white transition-all duration-300 shadow-md">
+        <a 
+        className="px-6 py-3 bg-[#6A0DAD] hover:bg-[#5A0C96] rounded-full font-semibold text-white transition-all duration-300 shadow-md cursor-pointer" 
+        onClick={() => scrollToSection("projects")}>
           View My Work
         </a>
-        <a className="px-6 py-3 border border-white/80 hover:bg-white/10 rounded-full text-white transition-all duration-300">
+        <a className="px-6 py-3 border border-white/80 hover:bg-white/10 rounded-full text-white transition-all duration-300 cursor-pointer"
+        onClick={() => scrollToSection("contact")}
+        >
           Contact Me
         </a>
       </div>
 
       <div className="absolute bottom-6 animate-bounce">
         <button
-          className="text-white"
+          className="text-whit rounded-3xl bg-[#6A0DAD] hover:bg-[#5A0C96] p-2 font-semibold transition"
           onClick={() => scrollToSection("about")}
         >
           ↓ Scroll Down
