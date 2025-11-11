@@ -6,6 +6,25 @@ gsap.registerPlugin(ScrollToPlugin);
 
 function Menu() {
   const [isOpen, setIsOpen] = useState(false);
+  // 1. New state to track if the menu should be visible (initially false)
+  const [isVisible, setIsVisible] = useState(false); 
+
+  // 2. useEffect to handle scroll event
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if the vertical scroll position is greater than, say, 100 pixels
+      const shouldBeVisible = window.scrollY > 100; 
+      setIsVisible(shouldBeVisible);
+    };
+
+    // Add the scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // Empty dependency array means this runs once on mount
 
   const scrollToSection = (id) => {
     const offset = 80; 
@@ -22,15 +41,36 @@ function Menu() {
     }
   };
 
+  // The 'desktop' menu now uses the 'isVisible' state for its class
+  const desktopMenuClasses = `fixed top-0 left-0 h-full bg-black shadow-md flex flex-col items-center py-3 z-50 transition-transform duration-300 ease-in-out w-64 transform ${
+    isOpen ? 'translate-x-0' : '-translate-x-full'
+  } md:translate-x-0 md:w-40 md:flex ${
+    isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none' // Hide and disable interaction
+  }`;
+
+
   return (
     <>
-      <button className="fixed top-4 left-4 z-[60] md:hidden py-2 px-4  text-white bg-black rounded transition-all duration-300 shadow-lg" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? '✕' : '☰'} 
-      </button>
+      {/* Mobile Menu Button - Show only when isVisible is true */}
+      {isVisible && (
+        <button 
+          className="fixed top-4 left-4 z-[60] md:hidden py-2 px-4 text-white bg-black rounded transition-all duration-300 shadow-lg" 
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? '✕' : '☰'} 
+        </button>
+      )}
 
-      {isOpen && (<div className="fixed inset-0 bg-black opacity-50 z-40 md:hidden" onClick={() => setIsOpen(false)}></div>)}
+      {/* Mobile Overlay - Only show if open AND isVisible */}
+      {isOpen && isVisible && (
+        <div 
+          className="fixed inset-0 bg-black opacity-50 z-40 md:hidden" 
+          onClick={() => setIsOpen(false)}
+        ></div>
+      )}
 
-      <div className={`fixed top-0 left-0 h-full bg-black shadow-md flex flex-col items-center py-3 z-50 transition-transform duration-300 ease-in-out w-64 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 md:w-40 md:flex`}>
+      {/* Main Menu Container - Uses the combined class */}
+      <div className={desktopMenuClasses}>
         <div className="mb-10 mt-10 md:mt-0">
           <h1 className="text-2xl font-bold text-white cursor-default" onClick={() => scrollToSection("home") || handleLinkClick()}>MKA</h1>
         </div>

@@ -1,76 +1,88 @@
-import Keren from '../assets/keren.jpg';
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(SplitText);
 
-function Hero(){
-    const imgRef = useRef(null);
+export default function HeroSection() {
+  const [word, setWord] = useState("Front"); // Awalnya "Front"
+  const containerRef = useRef(null);
+  const headingRef = useRef(null);
+  const subheadingRef = useRef(null);
+  const buttonRef = useRef(null);
+  const wordRef = useRef(null);
 
-    useEffect(() => {
-        gsap.fromTo(
-            ".hero",
-            { clipPath: "inset(0 100% 0 0)", opacity: 0 },
-            {
-                clipPath: "inset(0 0% 0 0)",
-                opacity: 1,
-                duration: 1.5,
-                ease: "power3.out",
-                delay: 0.6,
-            }
-        );
+  // Animasi pergantian "Front" <-> "Back"
+  useEffect(() => {
+    const interval = setInterval(() => {
+      gsap.to(wordRef.current, {
+        opacity: 0,
+        y: -10,
+        duration: 0.3,
+        onComplete: () => {
+          setWord((prev) => (prev === "Front" ? "Back" : "Front"));
+          gsap.fromTo(
+            wordRef.current,
+            { opacity: 0, y: 10 },
+            { opacity: 1, y: 0, duration: 0.3 }
+          );
+        },
+      });
+    }, 2000); // ganti tiap 2 detik
 
-      
-        const gambar = imgRef.current; 
+    return () => clearInterval(interval);
+  }, []);
 
-        if (gambar) { 
-          
-         
-            const handleMouseEnter = () => {
-                gsap.to(gambar, {
-                    scale: 1.1,
-                    rotation: gsap.utils.random(-10, 10),
-                    duration: 0.3,
-                    ease: "power2.out",
-                });
-            };
+  const scrollToSection = (id) => {
+    const offset = -80;
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: { y: `#${id}`, offsetY: offset },
+      ease: "expo.inOut",
+    });
+  };
 
-            const handleMouseLeave = () => {
-                gsap.to(gambar, {
-                    scale: 1,
-                    rotation: 0,
-                    duration: 0.3,
-                    ease: "power2.inOut",
-                });
-            };
+  return (
+    <section
+      ref={containerRef}
+      className="h-screen flex flex-col justify-center items-center text-center bg-[linear-gradient(90deg,#B86ADF_0%,#F76D71_50%,#FFB347_100%)] text-white px-6 w-full relative overflow-hidden"
+    >
+      <h1
+        ref={headingRef}
+        className="text-4xl md:text-6xl font-extrabold mb-4"
+      >
+        Hi, I’m Kahfi —{" "}
+        <span ref={wordRef} className="inline-block">
+          {word}
+        </span>
+        -End Developer
+      </h1>
 
-         
-            gambar.addEventListener("mouseenter", handleMouseEnter);
-            gambar.addEventListener("mouseleave", handleMouseLeave);
+      <p
+        ref={subheadingRef}
+        className="text-lg md:text-xl text-white max-w-xl mb-8"
+      >
+        I create smooth, interactive web experiences with React, GSAP, and
+        Tailwind CSS.
+      </p>
 
-           
-            return () => {
-                gambar.removeEventListener("mouseenter", handleMouseEnter);
-                gambar.removeEventListener("mouseleave", handleMouseLeave);
-            };
-        }
+      <div ref={buttonRef} className="flex gap-4">
+        <a className="px-6 py-3 bg-[#6A0DAD] hover:bg-[#5A0C96] rounded-full font-semibold text-white transition-all duration-300 shadow-md">
+          View My Work
+        </a>
+        <a className="px-6 py-3 border border-white/80 hover:bg-white/10 rounded-full text-white transition-all duration-300">
+          Contact Me
+        </a>
+      </div>
 
-    }, []);
-
-    return(
-        
-        <div className="relative flex items-center justify-center py-10 hero md:ml-40 px-6 md:px-16" id='home'>
-            <h1 className="absolute text-[60px] sm:text-[80px] md:text-[120px] lg:text-[160px] font-extrabold text-gray-200 dark:text-gray-700 opacity-30 select-none text-center leading-none">Welcome</h1>
-           
-            <img 
-                src={Keren} 
-                alt="Keren" 
-                className="w-[150px] md:w-[250px] lg:w-[350px] h-auto rounded-2xl shadow-xl relative z-10 opacity-50 hover:opacity-85 gambar"
-                ref={imgRef} 
-            />
-        </div>
-
-    );
+      <div className="absolute bottom-6 animate-bounce">
+        <button
+          className="text-white"
+          onClick={() => scrollToSection("about")}
+        >
+          ↓ Scroll Down
+        </button>
+      </div>
+    </section>
+  );
 }
-export default Hero;

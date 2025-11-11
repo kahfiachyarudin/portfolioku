@@ -1,4 +1,4 @@
-import gambar from '../assets/gktw.JPG';
+import gambar from '../assets/keren.jpg';
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -84,7 +84,7 @@ const aboutAnimation = gsap.from(splitAbout.words, {
         ease: "power3.out",
         scrollTrigger: {
           trigger: ".div-2",
-          start: "top 0%",
+          start: "top 80%",
         }
       }
     );
@@ -136,7 +136,7 @@ const aboutAnimation = gsap.from(splitAbout.words, {
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 lg:px-8 py-20 md:ml-40 cursor-default px-6 md:px-16" id="about">
+    <div className="max-w-6xl mx-auto px-4 lg:px-8 py-20 md:ml-40 cursor-default" id="about">
       <p className="text-2xl text-gray-600">Nice to meet you...</p>
       <h1 className="text-5xl font-extrabold bg-gradient-to-l from-secondary to-primary text-transparent bg-clip-text mt-2">
         About Me
@@ -162,68 +162,6 @@ const aboutAnimation = gsap.from(splitAbout.words, {
 
         {/* Kanan: Contact details, about me, skill & exp */}
         <div className="w-full lg:w-2/3 space-y-12 div-2">
-          {/* Contact Details */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-indigo-600 w-full">
-              Contact Details
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6">
-              <div className="flex items-center space-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                  className="icon icon-tabler icon-tabler-phone">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
-                </svg>
-                <p className="text-lg text-gray-700">+62 851 5515 515</p>
-              </div>
-
-              <div className="flex items-center space-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                  className="icon icon-tabler icon-tabler-mail">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
-                  <path d="M3 7l9 6l9 -6" />
-                </svg>
-                <p className="text-lg text-gray-700">
-                  kahfi1211@student.abudzar.sch.id
-                </p>
-              </div>
-
-              <div className="flex items-center space-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                  className="icon icon-tabler icon-tabler-map-pin">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                  <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
-                </svg>
-                <p className="text-lg text-gray-700">Alamat</p>
-              </div>
-
-              <div className="flex items-center space-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                  className="icon icon-tabler icon-tabler-book">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
-                  <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
-                  <path d="M3 6l0 13" />
-                  <path d="M12 6l0 13" />
-                  <path d="M21 6l0 13" />
-                </svg>
-                <p className="text-lg text-gray-700">
-                  Pondok Tahfizh Plus Abu Dzar
-                </p>
-              </div>
-            </div>
-          </div>
-
           {/* About Me */}
           <div>
             <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-indigo-600">
