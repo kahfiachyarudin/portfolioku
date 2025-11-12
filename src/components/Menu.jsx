@@ -88,13 +88,13 @@ function Menu() {
         <div className="mt-auto mb-5">
           <div className="text-white flex flex-row items-center gap-5 w-full justify-center">
             {/* Social icons */}
-            <button className="text-white hover:text-[#FFB347] transition-colors duration-300"  onClick={() => window.open("https://www.linkedin.com/in/muhammad-kahfi-537941377", "_blank")}>
+            <button className="text-white hover:text-[#FFB347] hover:scale-105 transition-colors duration-300"  onClick={() => window.open("https://www.linkedin.com/in/muhammad-kahfi-537941377", "_blank")}>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5"/><path d="M8 8v.01"/><path d="M12 16v-5"/><path d="M16 16v-3a2 2 0 1 0 -4 0"/><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"/></svg>
             </button>
-            <button className="text-white hover:text-[#FFB347] transition-colors duration-300" onClick={() => window.open("https://www.instagram.com/sk3choo/", "_blank")}>
+            <button className="text-white hover:text-[#FFB347] hover:scale-105 transition-colors duration-300" onClick={() => window.open("https://www.instagram.com/sk3choo/", "_blank")}>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/><path d="M16.5 7.5v.01"/></svg>
             </button>
-            <button className="text-white hover:text-[#FFB347] transition-colors duration-300" onClick={() => window.open("https://wa.me/628999717898", "_blank")}>
+            <button className="text-white hover:text-[#FFB347] hover:scale-105 transition-colors duration-300" onClick={() => window.open("https://wa.me/628999717898", "_blank")}>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"/><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"/></svg>
             </button>
           </div>

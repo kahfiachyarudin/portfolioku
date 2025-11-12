@@ -45,7 +45,7 @@ export default function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="h-screen flex flex-col justify-center items-center text-center bg-brand-gradient text-white px-6 relative overflow-hidden"
+      className="h-screen flex flex-col justify-center items-center text-center bg-brand-gradientaaa md:bg-brand-gradient text-white px-6 relative overflow-hidden"
     >
       <h1
         ref={headingRef}

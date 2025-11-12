@@ -6,7 +6,7 @@ import Hero from './components/Hero.jsx';
 import Experience from './components/Experience.jsx';
 import About from './components/About.jsx';
 import Project from './components/Project.jsx';
-import Form from './components/Form.jsx';
+import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import Skill from './components/Skill.jsx';
 
@@ -18,7 +18,7 @@ createRoot(document.getElementById('root')).render(
     <Skill />
     <Experience />
     <Project />
-    <Form />
+    <Contact />
     <Footer />
   </StrictMode>,
 )
