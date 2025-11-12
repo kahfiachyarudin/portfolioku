@@ -13,7 +13,7 @@ function Menu() {
   useEffect(() => {
     const trigger = ScrollTrigger.create({
       trigger: "#about",       
-      start: "top top",    
+      start: "top 20%",    
       onEnter: () => setIsVisible(true),
       onLeaveBack: () => setIsVisible(false),
     });

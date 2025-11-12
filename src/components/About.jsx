@@ -94,7 +94,7 @@ const aboutAnimation = gsap.from(splitAbout.words, {
     const skillAnimation = gsap.from(splitSkill.words, {
       scrollTrigger: {
         trigger: skillRef.current,
-        start: "top 80%",
+        start: "top 70%",
         toggleActions: "play",
       },
       y: -100,
@@ -109,7 +109,7 @@ const aboutAnimation = gsap.from(splitAbout.words, {
     const expAnimation = gsap.from(splitExp.chars, {
       scrollTrigger: {
         trigger: skillRef.current,
-        start: "top 80%",
+        start: "top 70%",
         toggleActions: "play",
       },
       x: 150,
