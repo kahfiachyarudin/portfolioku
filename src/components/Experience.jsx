@@ -106,14 +106,12 @@ function Experience() {
           </button>
         </div>
 
-        {/* Desktop layout */}
         <div className="hidden md:block md:w-1/2 space-y-8 cursor-default text-center md:text-left">
           {cardList.map((card, index) => (
             <ExperienceCard key={index} {...card} />
           ))}
         </div>
 
-        {/* Mobile slider */}
         <div className="flex md:hidden overflow-x-auto space-x-4 snap-x snap-mandatory pb-4 scrollbar-hide">
           {cardList.map((card, index) => (
             <div key={index} className="snap-center min-w-[85%]">
@@ -126,7 +124,6 @@ function Experience() {
   );
 }
 
-// Card reusable
 const cardList = [
   {
     year: "2025 – Now",
