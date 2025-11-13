@@ -94,7 +94,7 @@ const aboutAnimation = gsap.from(splitAbout.words, {
     const skillAnimation = gsap.from(splitSkill.words, {
       scrollTrigger: {
         trigger: skillRef.current,
-        start: "top 70%",
+        start: "top 80%",
         toggleActions: "play",
       },
       y: -100,
@@ -109,7 +109,7 @@ const aboutAnimation = gsap.from(splitAbout.words, {
     const expAnimation = gsap.from(splitExp.chars, {
       scrollTrigger: {
         trigger: skillRef.current,
-        start: "top 70%",
+        start: "top 90%",
         toggleActions: "play",
       },
       x: 150,
@@ -143,7 +143,7 @@ const aboutAnimation = gsap.from(splitAbout.words, {
       </h1>
 
       {/* Bagian utama: card kiri + detail kanan */}
-      <div className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:space-x-16 mt-16 about-section">
+      <div className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:space-x-16 mt-16 about-section overflow-hidden">
         
         {/* Kiri: Foto dan nama */}
         <div className="w-full lg:w-1/3 flex flex-col items-center p-6 bg-gray-50 rounded-xl shadow-lg card-about">

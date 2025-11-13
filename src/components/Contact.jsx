@@ -58,7 +58,8 @@ function Contact() {
   };
 
   return (
-  <div className="flex flex-col md:flex-row justify-center items-center min-h-screen md:ml-40 gap-10 px-6 md:px-12 py-10">
+  <div className="flex flex-col md:flex-row justify-center items-center min-h-screen md:ml-40 gap-10 px-6 md:px-12 py-10"
+  ref={formContainerRef}>
 
     {/* Bagian Contact Details */}
     <div className="px-6 py-10 flex flex-col gap-6 text-left bg-gray-100/60 backdrop-blur-md shadow-xl rounded-2xl w-full md:w-2/3 border border-gray-300 overflow-x-hidden">
@@ -135,7 +136,7 @@ function Contact() {
     </div>
 
     <div
-      ref={formContainerRef}
+      
       id="contact"
       className="px-6 py-10 flex flex-col gap-6 text-center bg-gray-100/60 backdrop-blur-md shadow-xl rounded-2xl w-full md:w-1/3 justify-center items-center border border-gray-300"
     >
