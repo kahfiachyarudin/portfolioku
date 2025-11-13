@@ -52,9 +52,9 @@ function Contact() {
           title: "Pesan Terkirim!",
           text: "✅ Terima kasih, kami akan menghubungi Anda secepatnya.",
           icon: "success",
-          confirmButtonColor: "#6A67CE", // bisa disesuaikan
+          confirmButtonColor: "#7B2CBF",
           confirmButtonText: "Oke"
-        });
+        }); 
         e.target.reset();
       },
       (error) => {
