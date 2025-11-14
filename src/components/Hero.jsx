@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
-
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(SplitText);
 
 export default function HeroSection() {
@@ -41,6 +42,7 @@ export default function HeroSection() {
       ease: "expo.inOut",
     });
   };
+
 
   return (
     <section
