@@ -43,6 +43,7 @@ function Menu() {
   } md:translate-x-0 md:w-40 md:flex ${
     isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
   }`;
+  
 
   return (
     <>

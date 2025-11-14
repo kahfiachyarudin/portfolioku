@@ -43,6 +43,21 @@ export default function HeroSection() {
     });
   };
 
+  const scrollToSectionkontak = (id) => {
+  const element = document.querySelector(`#${id}`);
+
+  if (!element) return;
+
+  const offset = 0; 
+  const targetY = element.offsetTop - offset;
+
+  gsap.to(window, {
+    duration: 1,
+    scrollTo: targetY,
+    ease: "expo.inOut",
+  });
+};
+
 
   return (
     <section
@@ -75,7 +90,7 @@ export default function HeroSection() {
           View My Work
         </a>
         <a className="px-6 py-3 border border-white/80 hover:bg-white/10 rounded-full text-white transition-all duration-300 cursor-pointer"
-        onClick={() => scrollToSection("contact")}
+        onClick={() => scrollToSectionkontak("contact")}
         >
           Contact Me
         </a>
