@@ -50,7 +50,7 @@ function Skill() {
 
       <div className="mt-12 flex flex-col lg:flex-row gap-10">
         <div className="lg:w-1/2  justify-center items-center text-center flex flex-col">
-          <p className="text-gray-700 leading-relaxed text-lg md:text-3xl font-bold" ref={textRef}>
+          <p className="text-gray-700 leading-relaxed text-lg md:text-3xl font-bold font-inter" ref={textRef}>
             I create fast, responsive, and modern websites with HTML, CSS, JavaScript, React, and Tailwind CSS.
           </p>
         </div>
@@ -74,8 +74,8 @@ function Skill() {
                 <path d="M15.5 8h-7l.5 4h6l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5" />
               </svg>
             </p>
-            <h1 className="text-2xl font-bold mb-2">HTML</h1>
-            <p className="text-gray-600">
+            <h1 className="text-2xl font-bold mb-2 ">HTML</h1>
+            <p className="text-gray-600 font-inter">
               Build structured and semantic web page layouts efficiently.
             </p>
           </div>
@@ -99,7 +99,7 @@ function Skill() {
               </svg>
             </p>
             <h1 className="text-2xl font-bold mb-2">CSS</h1>
-            <p className="text-gray-600">
+            <p className="text-gray-600 font-inter">
               Design beautiful and responsive websites with clean styling.
             </p>
           </div>
@@ -124,7 +124,7 @@ function Skill() {
               </svg>
             </p>
             <h1 className="text-2xl font-bold mb-2">JavaScript</h1>
-            <p className="text-gray-600">
+            <p className="text-gray-600 font-inter">
               Add interactivity and dynamic logic to enhance user experience.
             </p>
           </div>

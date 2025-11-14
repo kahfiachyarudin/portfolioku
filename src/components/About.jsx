@@ -137,8 +137,8 @@ const aboutAnimation = gsap.from(splitAbout.words, {
 
   return (
     <div className="max-w-6xl mx-auto px-4 lg:px-8 py-20 md:ml-40 cursor-default" id="about">
-      <p className="text-2xl text-gray-600">Nice to meet you...</p>
-      <h1 className="text-5xl font-extrabold bg-gradient-to-l from-[#FBBF24] to-[#7C3AED] text-transparent bg-clip-text mt-2">
+      <p className="text-2xl text-gray-600 font-inter">Nice to meet you...</p>
+      <h1 className="text-5xl  font-extrabold bg-gradient-to-l from-[#FBBF24] to-[#7C3AED] text-transparent bg-clip-text mt-2">
         About Me
       </h1>
 
@@ -155,7 +155,7 @@ const aboutAnimation = gsap.from(splitAbout.words, {
           <h1 className="text-2xl font-bold text-primary text-center">
             Muhammad Kahfi Achyarudin
           </h1>
-          <p className="text-lg text-gray-500 mt-1 text-center">
+          <p className="text-lg text-gray-500 mt-1 text-center font-inter">
             Best Candidate for Professional Backend
           </p>
         </div>
@@ -164,10 +164,10 @@ const aboutAnimation = gsap.from(splitAbout.words, {
         <div className="w-full lg:w-2/3 space-y-12 div-2">
           {/* About Me */}
           <div>
-            <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-primary">
+            <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-primary ">
               About Me
             </h2>
-            <p className="text-gray-600 leading-relaxed" ref={aboutRef}>
+            <p className="text-gray-600 leading-relaxed font-inter" ref={aboutRef}>
               Hello, my name is Muhammad Kahfi Achyarudin. I'm a (potential)
               best frontend and backend developer. I'm still in high school, but
               I'm very passionate and dedicated to my learning journey. I have
@@ -182,15 +182,15 @@ const aboutAnimation = gsap.from(splitAbout.words, {
               <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-primary">
                 Experience
               </h2>
-              <p className="text-gray-500" ref={expRef}>
+              <p className="text-gray-500 font-inter" ref={expRef}>
                 2nd Place in the National Mathematics Olympiad
               </p>
             </div>
             <div className="sm:w-1/2">
-              <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-primary">
+              <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-primary ">
                 Skill
               </h2>
-              <p className="text-gray-500" ref={skillRef}>
+              <p className="text-gray-500 font-inter" ref={skillRef}>
                 HTML, CSS, JS
               </p>
             </div>
