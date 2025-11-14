@@ -92,7 +92,7 @@ cards.forEach((card) => {
                     <img src={Roti} alt="" />
                 </div>  
                 <div className="p-4">
-                    <h2 className="text-lg font-semibold mb-2">Bread Papa's</h2>
+                    <h2 className="text-lg font-semibold mb-2 font-poppins">Bread Papa's</h2>
                     <p className="text-gray-600">Simple bakery website</p>
                     <button onClick={() => window.open("https://bread-papas.vercel.app/", "_blank")} className="mt-4 px-4 py-2 text-primary font-semibold border-2 border-primary rounded-md hover:bg-primary hover:text-white transition duration-300 hover:scale-105 button-view">View Project</button>
                 </div>
@@ -102,7 +102,7 @@ cards.forEach((card) => {
                     <img src={DataBarang} alt="" />
                 </div>
                 <div className="p-4">
-                    <h2 className="text-lg font-semibold mb-2">Invento</h2>
+                    <h2 className="text-lg font-semibold mb-2 font-poppins">Invento</h2>
                     <p className="text-gray-600">Simple website for recording goods</p>
                     <button onClick={() => window.open("https://invento-beta.vercel.app/", "_blank")} className="mt-4 px-4 py-2 text-primary font-semibold border-2 border-primary rounded-md hover:bg-primary hover:text-white transition duration-300 hover:scale-105 button-view">View Project</button>
                 </div>
@@ -112,7 +112,7 @@ cards.forEach((card) => {
                     <img src={Slicing} alt="" />
                 </div>
                 <div className="p-4">
-                    <h2 className="text-lg font-semibold mb-2">Slicing Projek</h2>
+                    <h2 className="text-lg font-semibold mb-2 font-poppins">Slicing Projek</h2>
                     <p className="text-gray-600">Slicing project for practice</p>
                     <button onClick={() => window.open("https://firstslicing-tailwind.vercel.app/", "_blank")} className="mt-4 px-4 py-2 text-primary font-semibold border-2 border-primary rounded-md hover:bg-primary hover:text-white transition duration-300 hover:scale-105 button-view">View Project</button>
                 </div>

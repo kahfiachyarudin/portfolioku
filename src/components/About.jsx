@@ -138,7 +138,7 @@ const aboutAnimation = gsap.from(splitAbout.words, {
   return (
     <div className="max-w-6xl mx-auto px-4 lg:px-8 py-20 md:ml-40 cursor-default" id="about">
       <p className="text-2xl text-gray-600 font-inter">Nice to meet you...</p>
-      <h1 className="text-5xl  font-extrabold bg-gradient-to-l from-[#FBBF24] to-[#7C3AED] text-transparent bg-clip-text mt-2">
+      <h1 className="text-5xl font-extrabold bg-gradient-to-l from-[#FBBF24] to-[#7C3AED] text-transparent bg-clip-text mt-2">
         About Me
       </h1>
 
@@ -164,7 +164,7 @@ const aboutAnimation = gsap.from(splitAbout.words, {
         <div className="w-full lg:w-2/3 space-y-12 div-2">
           {/* About Me */}
           <div>
-            <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-primary ">
+            <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-primary font-poppins">
               About Me
             </h2>
             <p className="text-gray-600 leading-relaxed font-inter" ref={aboutRef}>
@@ -179,7 +179,7 @@ const aboutAnimation = gsap.from(splitAbout.words, {
           {/* Experience & Skill */}
           <div className="flex flex-col sm:flex-row sm:space-x-10 space-y-10 sm:space-y-0">
             <div className="sm:w-1/2">
-              <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-primary">
+              <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-primary font-poppins">
                 Experience
               </h2>
               <p className="text-gray-500 font-inter" ref={expRef}>
@@ -187,7 +187,7 @@ const aboutAnimation = gsap.from(splitAbout.words, {
               </p>
             </div>
             <div className="sm:w-1/2">
-              <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-primary ">
+              <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-primary font-poppins">
                 Skill
               </h2>
               <p className="text-gray-500 font-inter" ref={skillRef}>

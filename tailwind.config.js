@@ -13,8 +13,8 @@ export default {
         'brand-gradientaaa': 'linear-gradient(180deg, #7B2CBF 0%, #F76D71 50%, #FFB347 100%)',
       },
        fontFamily: {
-        playfair: ['"Playfair Display"', 'serif'],
-         inter: ['Inter', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
     },
   },

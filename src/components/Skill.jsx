@@ -43,7 +43,7 @@ function Skill() {
     <div className="max-w-6xl mx-auto py-20 md:ml-40 cursor-default px-6 md:px-16" id="skill">
       <div>
         <p className="text-2xl text-gray-600">My</p>
-        <h1 className="text-5xl font-extrabold bg-gradient-to-l from-secondary to-primary text-transparent bg-clip-text mt-2">
+        <h1 className="text-5xl  font-extrabold bg-gradient-to-l from-secondary to-primary text-transparent bg-clip-text mt-2">
           Skills
         </h1>
       </div>
@@ -74,7 +74,7 @@ function Skill() {
                 <path d="M15.5 8h-7l.5 4h6l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5" />
               </svg>
             </p>
-            <h1 className="text-2xl font-bold mb-2 ">HTML</h1>
+            <h1 className="text-2xl font-bold mb-2 font-poppins">HTML</h1>
             <p className="text-gray-600 font-inter">
               Build structured and semantic web page layouts efficiently.
             </p>
@@ -98,7 +98,7 @@ function Skill() {
                 <path d="M8.5 8h7l-4.5 4h4l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5" />
               </svg>
             </p>
-            <h1 className="text-2xl font-bold mb-2">CSS</h1>
+            <h1 className="text-2xl font-bold mb-2 font-poppins">CSS</h1>
             <p className="text-gray-600 font-inter">
               Design beautiful and responsive websites with clean styling.
             </p>
@@ -123,7 +123,7 @@ function Skill() {
                 <path d="M16.5 8h-2.5a.5 .5 0 0 0 -.5 .5v3a.5 .5 0 0 0 .5 .5h1.423a.5 .5 0 0 1 .495 .57l-.418 2.93l-2 .5" />
               </svg>
             </p>
-            <h1 className="text-2xl font-bold mb-2">JavaScript</h1>
+            <h1 className="text-2xl font-bold mb-2 font-poppins">JavaScript</h1>
             <p className="text-gray-600 font-inter">
               Add interactivity and dynamic logic to enhance user experience.
             </p>
@@ -146,7 +146,7 @@ function Skill() {
                 <path d="M11.667 6c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 2 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968zm-4 6.5c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 1.975 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968z" />
               </svg>
             </p>
-            <h1 className="text-2xl font-bold mb-2">Tailwind</h1>
+            <h1 className="text-2xl font-bold mb-2 font-poppins">Tailwind</h1>
             <p className="text-gray-600">
               Speed up styling with flexible, responsive, and efficient classes.
             </p>

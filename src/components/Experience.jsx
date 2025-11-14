@@ -146,7 +146,7 @@ function ExperienceCard({ year, title, desc }) {
   return (
     <div className="experience-card flex flex-col border-b border-gray-300 pb-4 bg-white/10 rounded-xl p-6 transition-transform duration-300 ease-out">
       <p className="text-sm text-gray-200">{year}</p>
-      <h1 className="text-lg font-semibold text-white">{title}</h1>
+      <h1 className="text-lg font-semibold text-white font-poppins">{title}</h1>
       <p className="text-sm text-gray-200 mt-2">{desc}</p>
     </div>
   );
