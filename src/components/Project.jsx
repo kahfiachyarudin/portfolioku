@@ -1,6 +1,6 @@
 import Roti from '../assets/bread.webp';
 import DataBarang from '../assets/pendataan.webp';
-import Slicing from '../assets/slicing.webp';
+import SkyCast from '../assets/skycast.webp';
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -109,12 +109,12 @@ cards.forEach((card) => {
             </div>
             <div className="border border-gray-300 rounded-lg overflow-hidden hidden lg:block project-card">
                 <div className="h-48 bg-gray-200 flex items-center justify-center">
-                    <img src={Slicing} alt="" />
+                    <img src={SkyCast} alt="" />
                 </div>
                 <div className="p-4">
-                    <h2 className="text-lg font-semibold mb-2 font-poppins">Slicing Projek</h2>
-                    <p className="text-gray-600">Slicing project for practice</p>
-                    <button onClick={() => window.open("https://firstslicing-tailwind.vercel.app/", "_blank")} className="mt-4 px-4 py-2 text-primary font-semibold border-2 border-primary rounded-md hover:bg-primary hover:text-white transition duration-300 hover:scale-105 button-view">View Project</button>
+                    <h2 className="text-lg font-semibold mb-2 font-poppins">SkyCast</h2>
+                    <p className="text-gray-600">Weather app with API integration</p>
+                    <button onClick={() => window.open("https://skycast-murex.vercel.app/", "_blank")} className="mt-4 px-4 py-2 text-primary font-semibold border-2 border-primary rounded-md hover:bg-primary hover:text-white transition duration-300 hover:scale-105 button-view">View Project</button>
                 </div>
             </div>
         </div>
