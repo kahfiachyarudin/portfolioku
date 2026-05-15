@@ -9,6 +9,7 @@ import Project from './components/Project.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import Skill from './components/Skill.jsx';
+import Achievement from './components/Achievment.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')).render(
     <Skill />
     <Experience />
     <Project />
+    <Achievement />
     <Contact />
     <Footer />
   </StrictMode>,

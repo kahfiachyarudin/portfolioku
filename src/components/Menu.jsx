@@ -73,7 +73,7 @@ function Menu() {
 
         <div className="mb-10">
           <ul className="text-white space-y-6 text-center">
-            {["home", "about", "skill", "projects", "contact"].map((item) => (
+            {["home", "about", "skill", "projects", "contact", "achievement"].map((item) => (
               <li key={item} className="font-bold transition">
                 <button
                   onClick={() => scrollToSection(item) || handleLinkClick()}

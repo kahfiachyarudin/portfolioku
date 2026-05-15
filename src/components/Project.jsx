@@ -27,7 +27,6 @@ function Project(){
                     start: "top 80%",
                 },
             });
-            // animasi card hover
             const cards = gsap.utils.toArray(".project-card");
 
 cards.forEach((card) => {
@@ -36,7 +35,6 @@ cards.forEach((card) => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    // Efek lebih kecil (±10 derajat)
     const rotateY = ((x / rect.width) - 0.5) * 10;
     const rotateX = ((y / rect.height) - 0.5) * -10;
 

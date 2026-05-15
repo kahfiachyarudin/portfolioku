@@ -86,7 +86,7 @@ function Contact() {
               className="text-primary">
               <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"/>
             </svg>
-            <p className="text-lg text-gray-700">+62 851 5515 515</p>
+            <p className="text-lg text-gray-700">+62 899 717 898</p>
           </div>
 
           <div className="flex items-center space-x-3">
@@ -106,7 +106,7 @@ function Contact() {
               <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>
               <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"/>
             </svg>
-            <p className="text-lg text-gray-700">Alamat</p>
+            <p className="text-lg text-gray-700">Jl. Pln Raya, RT.001/RW.005, Klp. Indah, Kec. Tangerang, Kota Tangerang, Banten 15117</p>
           </div>
 
           <div className="flex items-center space-x-3">
