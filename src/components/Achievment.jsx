@@ -24,7 +24,7 @@ function Achievement() {
   return (
     <section
       ref={sectionRef}
-      className="max-w-6xl mx-auto px-4 lg:px-8 py-20 md:ml-40 cursor-default"
+      className="max-w-6xl mx-auto px-4 lg:px-8 py-20 md:ml-40 cursor-none"
       id="achievement"
     >
       <p className="text-2xl text-gray-600 font-inter">

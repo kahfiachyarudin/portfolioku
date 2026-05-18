@@ -40,7 +40,7 @@ function Skill() {
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto py-20 md:ml-40 cursor-default px-6 md:px-16" id="skill">
+    <div className="max-w-6xl mx-auto py-20 md:ml-40 cursor-none px-6 md:px-16" id="skill">
       <div>
         <p className="text-2xl text-gray-600">My</p>
         <h1 className="text-5xl  font-extrabold bg-gradient-to-l from-secondary to-primary text-transparent bg-clip-text mt-2">
@@ -56,7 +56,7 @@ function Skill() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:w-1/2 skill-cards h-full ">
-          <div className="p-6 bg-white/80 rounded-2xl shadow-md hover:shadow-xl transition-all duration-200 hover:scale-110 skill-item cursor-default text-center">
+          <div className="p-6 bg-white/80 rounded-2xl shadow-md hover:shadow-xl transition-all duration-200 hover:scale-110 skill-item cursor-none text-center">
             <p className="w-12 h-12 mb-4 mx-auto">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +80,7 @@ function Skill() {
             </p>
           </div>
 
-          <div className="p-6 bg-white/80 rounded-2xl shadow-md hover:shadow-xl transition-all duration-200 hover:scale-110 skill-item cursor-default text-center">
+          <div className="p-6 bg-white/80 rounded-2xl shadow-md hover:shadow-xl transition-all duration-200 hover:scale-110 skill-item cursor-none text-center">
             <p className="w-12 h-12 mb-4 mx-auto">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@ function Skill() {
             </p>
           </div>
 
-          <div className="p-6 bg-white/80 rounded-2xl shadow-md hover:shadow-xl transition-all duration-200 hover:scale-110 skill-item cursor-default text-center">
+          <div className="p-6 bg-white/80 rounded-2xl shadow-md hover:shadow-xl transition-all duration-200 hover:scale-110 skill-item cursor-none text-center">
             <p className="w-12 h-12 mb-4 mx-auto">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +129,7 @@ function Skill() {
             </p>
           </div>
 
-          <div className="p-6 bg-white/80 rounded-2xl shadow-md hover:shadow-xl transition-all duration-200 hover:scale-110 skill-item cursor-default text-center">
+          <div className="p-6 bg-white/80 rounded-2xl shadow-md hover:shadow-xl transition-all duration-200 hover:scale-110 skill-item cursor-none text-center">
             <p className="w-12 h-12 mb-4 mx-auto">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

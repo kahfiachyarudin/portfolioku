@@ -1,5 +1,5 @@
 import Roti from '../assets/bread.webp';
-import DataBarang from '../assets/pendataan.webp';
+import Quran from '../assets/albayan.webp';
 import SkyCast from '../assets/skycast.webp';
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
@@ -81,7 +81,7 @@ cards.forEach((card) => {
 
     })
     return(
-       <div className="max-w-6xl mx-auto md:ml-40 py-20 cursor-default px-6 md:px-16" id='projects'>
+       <div className="max-w-6xl mx-auto md:ml-40 py-20 cursor-none px-6 md:px-16" id='projects'>
         <p className="text-2xl text-gray-600">Work</p>
         <h1 className="text-5xl font-extrabold bg-gradient-to-l from-secondary to-primary text-transparent bg-clip-text mt-2">Recent Project</h1>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -97,12 +97,12 @@ cards.forEach((card) => {
             </div>
             <div className="border border-gray-300 rounded-lg overflow-hidden project-card">
                 <div className="h-48 bg-gray-200 flex items-center justify-center">
-                    <img src={DataBarang} alt="" />
+                    <img src={Quran} alt="" />
                 </div>
                 <div className="p-4">
-                    <h2 className="text-lg font-semibold mb-2 font-poppins">Invento</h2>
-                    <p className="text-gray-600">Simple website for recording goods</p>
-                    <button onClick={() => window.open("https://invento-beta.vercel.app/", "_blank")} className="mt-4 px-4 py-2 text-primary font-semibold border-2 border-primary rounded-md hover:bg-primary hover:text-white transition duration-300 hover:scale-105 button-view">View Project</button>
+                    <h2 className="text-lg font-semibold mb-2 font-poppins">Al-Bayan</h2>
+                    <p className="text-gray-600">Online quran web</p>
+                    <button onClick={() => window.open("https://al-bayan-snowy.vercel.app/", "_blank")} className="mt-4 px-4 py-2 text-primary font-semibold border-2 border-primary rounded-md hover:bg-primary hover:text-white transition duration-300 hover:scale-105 button-view">View Project</button>
                 </div>
             </div>
             <div className="border border-gray-300 rounded-lg overflow-hidden hidden lg:block project-card">

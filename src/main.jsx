@@ -10,9 +10,11 @@ import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import Skill from './components/Skill.jsx';
 import Achievement from './components/Achievment.jsx';
+import Cursor from './components/Cursor.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <Cursor />
     <Menu />
     <Hero />
     <About />

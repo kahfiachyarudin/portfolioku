@@ -127,7 +127,7 @@ function Contact() {
       {/* Form */}
       <div className="px-6 py-10 flex flex-col gap-6 text-center bg-gray-100/60 backdrop-blur-md shadow-xl rounded-2xl w-full md:w-1/3 border border-gray-300">
         <h1 className="text-2xl font-bold bg-gradient-to-l from-secondary to-primary text-transparent bg-clip-text">
-          Do you have any questions?
+          Get in touch
         </h1>
 
         <form ref={formRef} onSubmit={sendEmail} className="flex flex-col gap-4 w-full">

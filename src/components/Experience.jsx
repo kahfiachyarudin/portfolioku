@@ -101,12 +101,9 @@ function Experience() {
             a student who loves web development — especially frontend and backend. 
             I’ve been learning to build responsive and creative websites using React, Tailwind CSS, and Node.js.
           </p>
-          <button className="px-6 py-2 mt-4 text-white font-semibold border-2 border-secondary hover:bg-secondary hover:text-white rounded-md transition duration-300 button-cv">
-            Download My CV
-          </button>
         </div>
 
-        <div className="hidden md:block md:w-1/2 space-y-8 cursor-default text-center md:text-left">
+        <div className="hidden md:block md:w-1/2 space-y-8 cursor-none text-center md:text-left">
           {cardList.map((card, index) => (
             <ExperienceCard key={index} {...card} />
           ))}
