@@ -48,10 +48,9 @@ function Experience() {
       scale: 0.8,
       opacity: 0,
       filter: "blur(6px)",
-      duration: 0.4,
+      duration: 0.1,
       ease: "power2.out",
       stagger: 0.1,
-      delay: 0.8,
     });
 
     // AMINASI TIMELINE LINE: Garis memanjang kebawah saat di-scroll (Hanya Desktop)
