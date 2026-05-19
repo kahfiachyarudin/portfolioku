@@ -3,14 +3,15 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 function Experience() {
   const expRefJudul = useRef(null);
   const expRefDeskripsi = useRef(null);
+  const timelineRef = useRef(null);
 
   useEffect(() => {
+    // Animasi munculnya section utama
     gsap.fromTo(
       ".section-experience",
       { clipPath: "inset(0 100% 0 0)", opacity: 0 },
@@ -27,6 +28,7 @@ function Experience() {
       }
     );
 
+    // Animasi teks judul (acak/rotate)
     const splitExp = new SplitText(expRefJudul.current, { type: "words" });
     gsap.from(splitExp.words, {
       scrollTrigger: { trigger: expRefJudul.current, start: "top 70%" },
@@ -39,6 +41,7 @@ function Experience() {
       delay: 0.5,
     });
 
+    // Animasi teks deskripsi (blur + scale)
     const splitDesc = new SplitText(expRefDeskripsi.current, { type: "words" });
     gsap.from(splitDesc.words, {
       scrollTrigger: { trigger: expRefDeskripsi.current, start: "top 70%" },
@@ -51,7 +54,39 @@ function Experience() {
       delay: 0.8,
     });
 
-    // Tilt hanya aktif di desktop
+    // AMINASI TIMELINE LINE: Garis memanjang kebawah saat di-scroll (Hanya Desktop)
+    if (window.innerWidth >= 768) {
+      gsap.fromTo(
+        ".timeline-line-progress",
+        { scaleY: 0 },
+        {
+          scaleY: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: timelineRef.current,
+            start: "top 60%",
+            end: "bottom 70%",
+            scrub: true,
+          },
+        }
+      );
+
+      // Animasi titik-titik timeline menyala saat dilewati scroll
+      gsap.utils.toArray(".timeline-dot").forEach((dot) => {
+        gsap.to(dot, {
+          backgroundColor: "#818cf8",
+          borderColor: "#a78bfa",
+          boxShadow: "0 0 15px #7c3aed",
+          scrollTrigger: {
+            trigger: dot,
+            start: "top 65%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      });
+    }
+
+    // Efek 3D Tilt pada Kartu
     if (window.innerWidth >= 768) {
       const cards = gsap.utils.toArray(".experience-card");
       cards.forEach((card) => {
@@ -59,8 +94,8 @@ function Experience() {
           const rect = card.getBoundingClientRect();
           const x = e.clientX - rect.left;
           const y = e.clientY - rect.top;
-          const rotateY = ((x / rect.width) - 0.5) * 20;
-          const rotateX = ((y / rect.height) - 0.5) * -20;
+          const rotateY = ((x / rect.width) - 0.5) * 16; // Diperhalus sedikit ke 16
+          const rotateX = ((y / rect.height) - 0.5) * -16;
 
           gsap.to(card, {
             rotationY: rotateY,
@@ -91,60 +126,102 @@ function Experience() {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 mt-10 md:ml-40 px-6 md:px-16">
-      <div className="w-full max-w-6xl items-center mx-auto rounded-3xl p-10 lg:p-16 shadow-2xl bg-brand-gradientaaa md:bg-brand-gradient flex flex-col md:flex-row text-white section-experience">
-        <div className="mb-12 md:w-1/2 text-center md:text-left">
-          <p className="mb-2 cursor-default">Experience</p>
-          <h1 className="text-4xl font-bold cursor-default" ref={expRefJudul}>My Experience</h1>
-          <p className="mt-2 cursor-default" ref={expRefDeskripsi}>
-            Hi, I'm <span className="font-semibold">Muhammad Kahfi Achyarudin</span>, 
-            a student who loves web development — especially frontend and backend. 
-            I’ve been learning to build responsive and creative websites using React, Tailwind CSS, and Node.js.
+    <section 
+      id="experience" 
+      className="max-w-6xl mx-auto py-24 px-6 md:px-16 text-slate-100 select-none"
+    >
+      <div className="w-full rounded-3xl p-8 lg:p-16 border border-slate-800/80 bg-slate-900/30 backdrop-blur-md flex flex-col lg:flex-row gap-12 lg:gap-16 items-start section-experience relative overflow-hidden shadow-2xl">
+        
+        {/* Efek Ambient Glow */}
+        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-violet-500/10 blur-[80px] rounded-full pointer-events-none" />
+
+        {/* Sisi Kiri: Judul dan Deskripsi */}
+        <div className="w-full lg:w-2/5 flex flex-col text-left relative z-10 lg:sticky lg:top-10">
+          <p className="text-sm font-medium tracking-widest text-indigo-400 uppercase font-mono">
+            // My Timeline
           </p>
+          <h2 
+            className="text-4xl md:text-5xl font-black tracking-tight mt-2 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400" 
+            ref={expRefJudul}
+          >
+            My Experience
+          </h2>
+          <p className="text-slate-400 leading-relaxed text-base md:text-lg font-normal mt-6" ref={expRefDeskripsi}>
+  My coding journey is driven by continuous learning and a passion for engineering. 
+  Over the years, I have progressed from mastering core web fundamentals to building complex, 
+  highly interactive full-stack applications with modern frameworks.
+</p>
         </div>
 
-        <div className="hidden md:block md:w-1/2 space-y-8 cursor-none text-center md:text-left">
-          {cardList.map((card, index) => (
-            <ExperienceCard key={index} {...card} />
-          ))}
+        {/* Sisi Kanan (Desktop): Timeline Vertikal Berjalan */}
+        <div 
+          ref={timelineRef} 
+          className="hidden md:flex flex-col w-full lg:w-3/5 relative pl-10 text-left"
+        >
+          {/* Garis Dasar Timeline (Muted) */}
+          <div className="absolute left-[11px] top-4 bottom-4 w-[2px] bg-slate-800" />
+          
+          {/* Garis Progress Timeline (Menyala & Tumbuh Berdasarkan Scroll) */}
+          <div className="absolute left-[11px] top-4 bottom-4 w-[2px] bg-gradient-to-b from-indigo-500 to-purple-500 origin-top scale-y-0 timeline-line-progress" />
+
+          {/* Wrapper Iterasi Card */}
+          <div className="space-y-12">
+            {cardList.map((card, index) => (
+              <div key={index} className="relative group">
+                {/* Titik Sambungan Timeline */}
+                <div className="absolute -left-[35px] top-6 w-6 h-6 rounded-full border-4 border-slate-950 bg-slate-800 z-20 transition-all duration-300 timeline-dot" />
+                
+                {/* Komponen Kartu Pengalaman */}
+                <ExperienceCard {...card} />
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="flex md:hidden overflow-x-auto space-x-4 snap-x snap-mandatory pb-4 scrollbar-hide">
+        {/* Sisi Kanan (Mobile): Tetap Horizontal Scroll agar Hemat Ruang Layar HP */}
+        <div className="flex md:hidden w-full overflow-x-auto space-x-4 snap-x snap-mandatory pb-4 scrollbar-none relative z-10">
           {cardList.map((card, index) => (
-            <div key={index} className="snap-center min-w-[85%]">
+            <div key={index} className="snap-center min-w-[90%] sm:min-w-[80%]">
               <ExperienceCard {...card} />
             </div>
           ))}
         </div>
+
       </div>
-    </div>
+    </section>
   );
 }
 
 const cardList = [
   {
-    year: "2025 – Now",
-    title: "Frontend Developer Journey",
-    desc: "Exploring tools like React, Tailwind CSS, and GSAP to create interactive websites."
-  },
-  {
-    year: "2024 – 2025",
-    title: "Understanding the basics of frontend",
-    desc: "Learned HTML and CSS to design clean and structured web pages."
-  },
-  {
-    year: "2023 – 2024",
-    title: "My first step into coding",
-    desc: "Discovered my passion for coding and built my first simple website."
-  },
+  year: "2016 – 2022",
+  title: "Early Technology Exploration",
+  desc: "Started exploring technology fundamentals during elementary school through Scratch programming, Microsoft Office tools, and basic computer understanding."
+},
+{
+  year: "2022 – 2025",
+  title: "Logic & Web Development Foundation",
+  desc: "Learned programming logic, UI/UX design with Figma, and built responsive websites using HTML, CSS, and JavaScript."
+},
+{
+  year: "2025 – Present",
+  title: "Modern Frontend & Backend Journey",
+  desc: "Focused on modern frontend engineering with React, Tailwind CSS, and interactive animations using GSAP, while currently exploring backend development and application architecture."
+},
 ];
 
 function ExperienceCard({ year, title, desc }) {
   return (
-    <div className="experience-card flex flex-col border-b border-gray-300 pb-4 bg-white/10 rounded-xl p-6 transition-transform duration-300 ease-out">
-      <p className="text-sm text-gray-200">{year}</p>
-      <h1 className="text-lg font-semibold text-white font-poppins">{title}</h1>
-      <p className="text-sm text-gray-200 mt-2">{desc}</p>
+    <div className="experience-card flex flex-col p-6 bg-slate-950/40 border border-slate-900 hover:border-indigo-500/30 rounded-2xl shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+      <span className="text-xs font-bold tracking-wider font-mono text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-2.5 py-1 rounded-md w-fit mb-4">
+        {year}
+      </span>
+      <h3 className="text-xl font-bold text-slate-100 group-hover:text-indigo-300 transition-colors duration-200 font-poppins tracking-tight">
+        {title}
+      </h3>
+      <p className="text-sm text-slate-400 mt-2 leading-relaxed font-inter">
+        {desc}
+      </p>
     </div>
   );
 }

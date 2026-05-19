@@ -80,43 +80,105 @@ cards.forEach((card) => {
     });
 
     })
-    return(
-       <div className="max-w-6xl mx-auto md:ml-40 py-20 cursor-none px-6 md:px-16" id='projects'>
-        <p className="text-2xl text-gray-600">Work</p>
-        <h1 className="text-5xl font-extrabold bg-gradient-to-l from-secondary to-primary text-transparent bg-clip-text mt-2">Recent Project</h1>
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="border border-gray-300 rounded-lg overflow-hidden project-card">
-                <div className="h-48 bg-gray-200 flex items-center justify-center">
-                    <img src={Roti} alt="" />
-                </div>  
-                <div className="p-4">
-                    <h2 className="text-lg font-semibold mb-2 font-poppins">Bread Papa's</h2>
-                    <p className="text-gray-600">Simple bakery website</p>
-                    <button onClick={() => window.open("https://bread-papas.vercel.app/", "_blank")} className="mt-4 px-4 py-2 text-primary font-semibold border-2 border-primary rounded-md hover:bg-primary hover:text-white transition duration-300 hover:scale-105 button-view">View Project</button>
-                </div>
-            </div>
-            <div className="border border-gray-300 rounded-lg overflow-hidden project-card">
-                <div className="h-48 bg-gray-200 flex items-center justify-center">
-                    <img src={Quran} alt="" />
-                </div>
-                <div className="p-4">
-                    <h2 className="text-lg font-semibold mb-2 font-poppins">Al-Bayan</h2>
-                    <p className="text-gray-600">Online quran web</p>
-                    <button onClick={() => window.open("https://al-bayan-snowy.vercel.app/", "_blank")} className="mt-4 px-4 py-2 text-primary font-semibold border-2 border-primary rounded-md hover:bg-primary hover:text-white transition duration-300 hover:scale-105 button-view">View Project</button>
-                </div>
-            </div>
-            <div className="border border-gray-300 rounded-lg overflow-hidden hidden lg:block project-card">
-                <div className="h-48 bg-gray-200 flex items-center justify-center">
-                    <img src={SkyCast} alt="" />
-                </div>
-                <div className="p-4">
-                    <h2 className="text-lg font-semibold mb-2 font-poppins">SkyCast</h2>
-                    <p className="text-gray-600">Weather app with API integration</p>
-                    <button onClick={() => window.open("https://skycast-murex.vercel.app/", "_blank")} className="mt-4 px-4 py-2 text-primary font-semibold border-2 border-primary rounded-md hover:bg-primary hover:text-white transition duration-300 hover:scale-105 button-view">View Project</button>
-                </div>
-            </div>
+return (
+  <section 
+    id="projects" 
+    className="max-w-6xl mx-auto py-24 px-6 md:px-16 text-slate-100 select-none"
+  >
+    {/* Header Section */}
+    <div className="mb-14">
+      <p className="text-sm font-medium tracking-widest text-indigo-400 uppercase font-mono">
+        // My Creations
+      </p>
+      <h2 className="text-4xl md:text-5xl font-black tracking-tight mt-2 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400">
+        Recent Projects
+      </h2>
+    </div>
+
+    {/* Grid Project - Responsif di semua device */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      {/* Projek 1: Bread Papa's */}
+      <div className="border border-slate-800/60 bg-slate-900/40 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-indigo-500/30 hover:shadow-indigo-500/5 group project-card">
+        <div className="h-48 bg-slate-950 flex items-center justify-center overflow-hidden border-b border-slate-900 relative">
+          {/* Overlay gradasi tipis di atas gambar */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-50 z-10" />
+          <img 
+            src={Roti} 
+            alt="Bread Papa's" 
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>  
+        <div className="p-6">
+          <h3 className="text-xl font-bold mb-2 text-slate-100 group-hover:text-indigo-300 transition-colors duration-200 font-poppins tracking-tight">
+            Bread Papa's
+          </h3>
+          <p className="text-sm text-slate-400 font-inter leading-relaxed">
+            A sleek, modern, and high-performance bakery landing page layout.
+          </p>
+          <button 
+            onClick={() => window.open("https://bread-papas.vercel.app/", "_blank")} 
+            className="mt-6 w-full px-4 py-2.5 text-xs font-semibold tracking-wider uppercase text-slate-200 border border-slate-800 bg-slate-950/60 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-violet-600 hover:border-transparent hover:text-white rounded-xl transition-all duration-300 shadow-md active:translate-y-0"
+          >
+            Launch Project
+          </button>
         </div>
-       </div>
-    )
+      </div>
+
+      {/* Projek 2: Al-Bayan */}
+      <div className="border border-slate-800/60 bg-slate-900/40 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-violet-500/30 hover:shadow-violet-500/5 group project-card">
+        <div className="h-48 bg-slate-950 flex items-center justify-center overflow-hidden border-b border-slate-900 relative">
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-50 z-10" />
+          <img 
+            src={Quran} 
+            alt="Al-Bayan" 
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+        <div className="p-6">
+          <h3 className="text-xl font-bold mb-2 text-slate-100 group-hover:text-violet-300 transition-colors duration-200 font-poppins tracking-tight">
+            Al-Bayan
+          </h3>
+          <p className="text-sm text-slate-400 font-inter leading-relaxed">
+            Digital Al-Quran web platform designed for clean readability and access.
+          </p>
+          <button 
+            onClick={() => window.open("https://al-bayan-snowy.vercel.app/", "_blank")} 
+            className="mt-6 w-full px-4 py-2.5 text-xs font-semibold tracking-wider uppercase text-slate-200 border border-slate-800 bg-slate-950/60 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-violet-600 hover:border-transparent hover:text-white rounded-xl transition-all duration-300 shadow-md active:translate-y-0"
+          >
+            Launch Project
+          </button>
+        </div>
+      </div>
+
+      {/* Projek 3: SkyCast */}
+      <div className="border border-slate-800/60 bg-slate-900/40 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/30 hover:shadow-purple-500/5 group project-card">
+        <div className="h-48 bg-slate-950 flex items-center justify-center overflow-hidden border-b border-slate-900 relative">
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-50 z-10" />
+          <img 
+            src={SkyCast} 
+            alt="SkyCast" 
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+        <div className="p-6">
+          <h3 className="text-xl font-bold mb-2 text-slate-100 group-hover:text-purple-300 transition-colors duration-200 font-poppins tracking-tight">
+            SkyCast
+          </h3>
+          <p className="text-sm text-slate-400 font-inter leading-relaxed">
+            Real-time weather application built using dynamic external API integration.
+          </p>
+          <button 
+            onClick={() => window.open("https://skycast-murex.vercel.app/", "_blank")} 
+            className="mt-6 w-full px-4 py-2.5 text-xs font-semibold tracking-wider uppercase text-slate-200 border border-slate-800 bg-slate-950/60 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-violet-600 hover:border-transparent hover:text-white rounded-xl transition-all duration-300 shadow-md active:translate-y-0"
+          >
+            Launch Project 
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+);
 };
 export default Project;

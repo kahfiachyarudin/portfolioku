@@ -5,3 +5,22 @@
 body {
   cursor: none;
 }
+
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-50 antialiased;
+  }
+}
+
+/* Sembunyikan untuk Chrome, Safari, dan Opera */
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Sembunyikan untuk IE, Edge, dan Firefox */
+html, body {
+  -ms-overflow-style: none;  /* IE dan Edge */
+  scrollbar-width: none;  /* Firefox */
+}

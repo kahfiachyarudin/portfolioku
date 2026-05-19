@@ -1,204 +1,121 @@
-import gambar from '../assets/foto.webp';
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(SplitText);
 
-function About() {
-  const skillRef = useRef(null);
-  const aboutRef = useRef(null);
-  const expRef = useRef(null);
+const facts = [
+  { k: "Grade", v: "High school" },
+  { k: "Mathematics", v: "2nd Olympiad" },
+  { k: "Based in", v: "Indonesia" },
+  { k: "Interested", v: "GSAP + Logic" },
+];
+
+export function About() {
+  const ref = useRef(null);
 
   useEffect(() => {
-    // animasi untuk bagian about
-    const splitAbout = new SplitText(aboutRef.current, { type: "words" });
-const aboutAnimation = gsap.from(splitAbout.words, {
-  scrollTrigger: {
-    trigger: aboutRef.current,
-    start: "top 90%",
-    toggleActions: "play",
-  },
-  y: -30,
-  opacity: 0,
-  rotation: "random(-30, 30)",
-  duration: 0.25,
-  ease: "power2.out",
-  stagger: 0.05,
-});
-
-
-    // animasi untuk bagian nama / section awal
-    const aboutSection = gsap.utils.toArray(".about-section");
-    gsap.fromTo(
-      aboutSection,
-      { y: 100, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 2,
-        stagger: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".about-section",
-          start: "top 70%",
-        }
-      }
-    );
-
-    // animasi untuk card about
-    const cardAbout = gsap.utils.toArray(".card-about");
-    gsap.fromTo(
-      cardAbout,
-      {
-        clipPath: "inset(0 100% 0 0)",
-        opacity: 0,
-      },
-      {
-        clipPath: "inset(0 0% 0 0)",
-        opacity: 1,
-        duration: 1.5,
-        stagger: 0.3,
-        ease: "power3.out",
-        delay: 0.3,
-        scrollTrigger: {
-          trigger: ".card-about",
-          start: "top 80%",
+    const ctx = gsap.context(() => {
+      gsap.from(".about-reveal", {
+        scrollTrigger: { 
+          trigger: ref.current, 
+          start: "top 75%" 
         },
-      }
-    );
-
-    // animasi untuk div contact details & about me
-    const divDetail = gsap.utils.toArray(".div-2");
-    gsap.fromTo(
-      divDetail,
-      { x: 100, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 2,
-        stagger: 1,
-        delay: 0.3,
+        y: 40, 
+        opacity: 0, 
+        duration: 0.9, 
+        stagger: 0.1, 
         ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".div-2",
-          start: "top 80%",
-        }
-      }
-    );
-
-    // animasi untuk skill dan experience
-    const splitSkill = new SplitText(skillRef.current, { type: "words" });
-    const skillAnimation = gsap.from(splitSkill.words, {
-      scrollTrigger: {
-        trigger: skillRef.current,
-        start: "top 80%",
-        toggleActions: "play",
-      },
-      y: -100,
-      opacity: 0,
-      rotation: "random(-80, 80)",
-      duration: 0.7,
-      ease: "back",
-      stagger: 0.15,
-    });
-
-    const splitExp = new SplitText(expRef.current, { type: "chars" });
-    const expAnimation = gsap.from(splitExp.chars, {
-      scrollTrigger: {
-        trigger: skillRef.current,
-        start: "top 90%",
-        toggleActions: "play",
-      },
-      x: 150,
-      opacity: 0,
-      duration: 1.5,
-      ease: "power4",
-      stagger: 0.04,
-      delay: 0.3,
-    });
-
-    // cleanup animasi
-    return () => {
-      aboutAnimation.revert();
-      splitAbout.revert();
-      aboutAnimation.kill();
-      skillAnimation.revert();
-      splitSkill.revert();
-      skillAnimation.kill();
-      expAnimation.revert();
-      splitExp.revert();
-      expAnimation.kill();
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
+      });
+    }, ref);
+    return () => ctx.revert();
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 lg:px-8 py-20 md:ml-40 cursor-none"  id="about">
-      <p className="text-2xl text-gray-600 font-inter">Nice to meet you...</p>
-      <h1 className="text-5xl font-extrabold bg-gradient-to-l from-[#FBBF24] to-[#7C3AED] text-transparent bg-clip-text mt-2">
-        About Me
-      </h1>
+    <section id="about" ref={ref} className="relative py-24 text-slate-100 select-none overflow-hidden">
+      
+      {/* Efek Ambient Glow samar di background belakang seni SVG */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-72 h-72 bg-indigo-500/5 blur-[100px] rounded-full pointer-events-none" />
 
-      {/* Bagian utama: card kiri + detail kanan */}
-      <div className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:space-x-16 mt-16 about-section overflow-hidden">
+      <div className="mx-auto max-w-6xl px-6 md:px-16">
         
-        {/* Kiri: Foto dan nama */}
-        <div className="w-full lg:w-1/3 flex flex-col items-center p-6 bg-gray-50 rounded-xl shadow-lg card-about">
-          <img
-            src={gambar}
-            alt="Profile"
-            className="w-48 h-48 object-cover rounded-full mb-4 border-4 border-primary"
-          />
-          <h1 className="text-2xl font-bold text-primary text-center">
-            Muhammad Kahfi Achyarudin
-          </h1>
-          <p className="text-lg text-gray-500 mt-1 text-center font-inter">
-            Best Candidate for Professional Backend
-          </p>
-        </div>
+        {/* Header Kecil */}
+        <p className="about-reveal font-mono text-sm tracking-widest text-indigo-400 uppercase">
+          01 — About Me
+        </p>
+        
+        {/* Judul Besar dengan Teks Gradasi */}
+        <h2 className="about-reveal mt-3 max-w-2xl text-4xl font-black sm:text-5xl tracking-tight leading-tight">
+          A developer with a designer's eye for{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400">
+            detail
+          </span>
+          .
+        </h2>
 
-        {/* Kanan: Contact details, about me, skill & exp */}
-        <div className="w-full lg:w-2/3 space-y-12 div-2">
-          {/* About Me */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-primary font-poppins">
-              About Me
-            </h2>
-            <p className="text-gray-600 leading-relaxed font-inter" ref={aboutRef}>
-              Hello, my name is Muhammad Kahfi Achyarudin. I'm a (potential)
-              best frontend and backend developer. I'm still in high school, but
-              I'm very passionate and dedicated to my learning journey. I have
-              above-average abilities in general subjects (especially
-              mathematics and logic).
+        {/* Pembagian Grid Konten */}
+        <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+          
+          {/* Sisi Kiri: Artwork SVG Interaktif */}
+          <div className="about-reveal relative w-full max-w-[400px] mx-auto lg:mx-0">
+            <div className="relative aspect-square overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/40 backdrop-blur-sm shadow-2xl group hover:border-indigo-500/30 transition-colors duration-300">
+              <svg viewBox="0 0 400 400" className="h-full w-full">
+                <defs>
+                  {/* Gradasi warna disesuaikan menjadi Indigo ke Violet premium */}
+                  <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#818cf8" />
+                    <stop offset="100%" stopColor="#a78bfa" />
+                  </linearGradient>
+                </defs>
+                <circle cx="200" cy="200" r="120" fill="none" stroke="url(#g1)" strokeWidth="1" opacity="0.3">
+                  <animate attributeName="r" values="120;140;120" dur="6s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="200" cy="200" r="80" fill="url(#g1)" opacity="0.08" />
+                <path d="M 100 200 Q 200 100 300 200 T 100 200" fill="none" stroke="url(#g1)" strokeWidth="1.5">
+                  <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="25s" repeatCount="indefinite" />
+                </path>
+                <g fill="#818cf8" opacity="0.6">
+                  {Array.from({ length: 12 }).map((_, i) => {
+                    const a = (i / 12) * Math.PI * 2;
+                    return <circle key={i} cx={200 + Math.cos(a) * 160} cy={200 + Math.sin(a) * 160} r="2.5" />;
+                  })}
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          {/* Sisi Kanan: Teks Deskripsi & Kartu Fakta */}
+          <div className="about-reveal flex flex-col justify-center text-left">
+            <p className="text-base md:text-lg leading-relaxed text-slate-400 font-normal">
+              Hi, I'm <span className="text-slate-200 font-semibold">Muhammad Kahfi Achyarudin</span>. Even though I am currently in high school, my dedication to software engineering drives me to constantly learn and experiment. I love crafting interfaces where logic meets beautiful movement.
             </p>
+            <p className="mt-4 text-base md:text-lg leading-relaxed text-slate-400 font-normal">
+              With a solid grip on mathematics and advanced logic, I ensure the code behind the screen is just as sharp and high-performing as the design in front of it.
+            </p>
+
+            {/* Grid Kartu Kecil Fakta Unik */}
+            <div className="mt-10 grid grid-cols-2 gap-4">
+              {facts.map((f) => (
+                <div 
+                  key={f.k} 
+                  className="rounded-xl border border-slate-900 bg-slate-950/40 p-4 backdrop-blur-sm shadow-lg hover:border-slate-800 transition-colors duration-200"
+                >
+                  <p className="font-mono text-[10px] tracking-widest uppercase text-slate-500">
+                    {f.k}
+                  </p>
+                  <p className="mt-1.5 text-lg font-bold text-slate-200 tracking-tight">
+                    {f.v}
+                  </p>
+                </div>
+              ))}
+            </div>
+
           </div>
 
-          {/* Experience & Skill */}
-          <div className="flex flex-col sm:flex-row sm:space-x-10 space-y-10 sm:space-y-0">
-            <div className="sm:w-1/2">
-              <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-primary font-poppins">
-                Experience
-              </h2>
-              <p className="text-gray-500 font-inter" ref={expRef}>
-                2nd Place in the National Mathematics Olympiad
-              </p>
-            </div>
-            <div className="sm:w-1/2">
-              <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-primary font-poppins">
-                Skill
-              </h2>
-              <p className="text-gray-500 font-inter" ref={skillRef}>
-                HTML, CSS, JS
-              </p>
-            </div>
-          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
-export default About;
+export default About

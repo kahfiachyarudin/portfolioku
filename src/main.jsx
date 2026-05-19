@@ -14,8 +14,8 @@ import Cursor from './components/Cursor.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Cursor />
     <Menu />
+    <Cursor />
     <Hero />
     <About />
     <Skill />
